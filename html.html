@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>HOME</title>
+<title>HTML</title>
 <!-- MathJax -->
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -31,7 +31,7 @@ try {
 <tr valign="top">
 <td id="layout-menu">
 <div class="menu-category">Linh TO</div>
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
+<div class="menu-item"><a href="index.html">Home</a></div>
 <div class="menu-item"><a href="biography.html">Biography</a></div>
 <div class="menu-item"><a href="awards.html">Awards</a></div>
 <div class="menu-category">Features</div>
@@ -43,45 +43,59 @@ try {
 <div class="menu-item"><a href="quotes.html">Quotes</a></div>
 <div class="menu-item"><a href="links.html">Links</a></div>
 <div class="menu-item"><a href="bugs.html">Bugs</a></div>
-<div class="menu-item"><a href="html.html">Html</a></div>
+<div class="menu-item"><a href="html.html" class="current">Html</a></div>
 <div class="menu-category">Visitor Stats</div>
 </td>
 <td id="layout-content">
 <div id="toptitle">
-<h1>To Hoang Linh</h1>
+<h1>HTML</h1>
+<div id="subtitle"></div>
 </div>
-<table class="imgtable"><tr><td>
-<a href="pictures/avatar-suwon.jpg"><img src="pictures/avatar-suwon.jpg" alt="Hoang-Linh TO" width="130px" height="135px" /></a>&nbsp;</td>
-<td align="left"><ul>
-<li><p><b>TO</b> Hoang Linh, Ph.D. (<img src="pictures/vnflag.jpg" width="18px" height="12px" alt="Vietnam" />)</p>
-</li>
-<li><p>Software Engineer.</p>
-</li>
-<li><p>Ph.D. and Master in Network Optimization.</p>
-</li>
-<li><p>Bachelor in Control and Automation.</p>
-</li>
-<li><p><a href="archives/cv.pdf" target=&ldquo;blank&rdquo;>Curriculum Vitae</a></p>
-</li>
-</ul>
-</td></tr></table>
-<h3>Ask me?</h3>
-<ul>
-<li><p>Convex Optimization.</p>
-</li>
-<li><p>C Programming Language.</p>
-</li>
-<li><p>OMNeT++ Discrete Event Simulator.</p>
-</li>
-</ul>
-<h3>Contact me?</h3>
-<ul>
-<li><p>tohoanglinh AT gmail DOT com</p>
-</li>
-<li><p><a href="http://www.linkedin.com/in/tohoanglinh" target=&ldquo;blank&rdquo;>LinkedIn</a></p>
-</li>
-</ul>
-<p><img src="https://chart.googleapis.com/chart?cht=qr&amp;chl=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ATo%3BLinh%0AFN%3ALinh%20To%0AORG%3AFPT%20Software%0ATITLE%3ADeveloper%0AADR%3A%3B%3B3Q8%2C%20Nguyen%20An%20Ninh%3BHa%20Noi%3BHoang%20Mai%3B100000%3BViet%20Nam%0ATEL%3BWORK%3BVOICE%3A%0ATEL%3BCELL%3A0868812086%0ATEL%3BFAX%3A%0AEMAIL%3BWORK%3BINTERNET%3Atohoanglinh%40gmail.com%0AURL%3A%0ABDAY%3A4%2F12%2F1986%0AEND%3AVCARD%0A&amp;chs=180x180&amp;choe=UTF-8&amp;chld=L|2" width="250px" height="250px" alt="QRCode" /></p>
+<h2>A HTML page</h2>
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+   <HEAD>
+      <TITLE>
+         A Small Hello 
+      </TITLE>
+   </HEAD>
+<BODY>
+   <h1>This is heading 1 (similar to = in jemdoc)</h1>
+   <P>This is very minimal "hello world" HTML document.</P> 
+
+   <h2>This is heading 2 (similar to == in jemdoc)</h2>
+   <P>This is other text.</P> 
+
+   <h3>This is heading 3 (similar to === in jemdoc)</h3>
+   <button type="button">A button</button>
+   <code>A piece of computer code</code>
+   <P>Downloading in progress:</P>
+   <progress value="22" max="100"></progress>
+   <p>This information is for authorized person only, pls login</p>
+    <section class="loginform cf">
+    <form name="login" action="index_submit" method="get" accept-charset="utf-8">
+        <ul>
+            <li><label for="usermail">Email</label>
+            <input type="email" name="usermail" placeholder="yourname@email.com" required></li>
+            <li><label for="password">Password</label>
+            <input type="password" name="password" placeholder="password" required></li>
+            <li>
+            <input type="submit" value="Login"></li>
+        </ul>
+    </form>
+    </section>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "starpupil";
+    /* Create connection */
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    echo "<P>ERROR CONNECTION</P>";
+    ?>
+</BODY>
+</HTML>
+<p></p>
 <div id="footer">
 <div id="footer-text">
 Page generated 2017-11-22 09:03:19 SE Asia Standard Time, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
