@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>NETWORKS OPTIMIZATION</title>
+<!-- MathJax -->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+</head>
+<body>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+    var pageTracker = _gat._getTracker("UA-50706531-1");
+    pageTracker._trackPageview();
+} catch(err) {}</script>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Linh TO</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="biography.html">Biography</a></div>
+<div class="menu-item"><a href="awards.html">Awards</a></div>
+<div class="menu-category">Features</div>
+<div class="menu-item"><a href="softwares.html">Softwares</a></div>
+<div class="menu-category">Optimization</div>
+<div class="menu-item"><a href="opt_convex.html">Convex</a></div>
+<div class="menu-item"><a href="opt_network.html" class="current">Network</a></div>
+<div class="menu-category">Others</div>
+<div class="menu-item"><a href="quotes.html">Quotes</a></div>
+<div class="menu-item"><a href="links.html">Links</a></div>
+<div class="menu-item"><a href="bugs.html">Bugs</a></div>
+<div class="menu-category">Visitor Stats</div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1><a href="Network-Optimization" target=&ldquo;blank&rdquo;>Network-Optimization</a></h1>
+</div>
+<h2>Flow Control: Source-Link Algorithms</h2>
+<div class="codeblock">
+<div class="blocktitle">Flow Control: <a href="archives/projects/convex-optimization/flowcontrol.m" target=&ldquo;blank&rdquo;>full-code</a>, <tt>free</tt></div>
+<div class="blockcontent"><pre>
+% Main loop
+for i=1:end_sim
+    p = p + stepsize * (A*x - c); % Link Price Algorithm
+    p = max(p,0);
+
+    x = 1./(A'*p); % Source Algorithm
+
+    x_hist(i,:) = x'; % Update row i (x1, x2, x3) by transpose x value from algorithm.
+    p_hist(i,:) = p';
+end
+</pre></div></div>
+<table class="imgtable"><tr><td>
+<a href="archives/projects/convex-optimization/flowcontrol_sourcerate.png"><img src="archives/projects/convex-optimization/flowcontrol_sourcerate.png" alt="Source Rate" width="300px" height="220px" /></a>&nbsp;</td>
+<td align="left"></td></tr></table>
+<table class="imgtable"><tr><td>
+<a href="archives/projects/convex-optimization/flowcontrol_linkprice.png"><img src="archives/projects/convex-optimization/flowcontrol_linkprice.png" alt="Link Price" width="300px" height="220px" /></a>&nbsp;</td>
+<td align="left"></td></tr></table>
+<div id="footer">
+<div id="footer-text">
+Page generated 2018-09-09 07:33:49 +07, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

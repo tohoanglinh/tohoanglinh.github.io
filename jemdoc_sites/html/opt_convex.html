@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>CONVEX OPTIMIZATION</title>
+<!-- MathJax -->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+</head>
+<body>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+    var pageTracker = _gat._getTracker("UA-50706531-1");
+    pageTracker._trackPageview();
+} catch(err) {}</script>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Linh TO</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="biography.html">Biography</a></div>
+<div class="menu-item"><a href="awards.html">Awards</a></div>
+<div class="menu-category">Features</div>
+<div class="menu-item"><a href="softwares.html">Softwares</a></div>
+<div class="menu-category">Optimization</div>
+<div class="menu-item"><a href="opt_convex.html" class="current">Convex</a></div>
+<div class="menu-item"><a href="opt_network.html">Network</a></div>
+<div class="menu-category">Others</div>
+<div class="menu-item"><a href="quotes.html">Quotes</a></div>
+<div class="menu-item"><a href="links.html">Links</a></div>
+<div class="menu-item"><a href="bugs.html">Bugs</a></div>
+<div class="menu-category">Visitor Stats</div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1><a href="Convex-Optimization" target=&ldquo;blank&rdquo;>Convex-Optimization</a></h1>
+</div>
+<h2>Conjugate function</h2>
+<h3>Read more:</h3>
+<ul>
+<li><p>Section 3.3 The conjugate function (<a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target=&ldquo;blank&rdquo;>CVX_Textbook</a>)</p>
+</li>
+</ul>
+<h3>Background:</h3>
+<ul>
+<li><p>The conjugate function of \(f\) is defined as follows:</p>
+</li>
+</ul>
+<p style="text-align:center">
+\[
+f^* (y) = sup_{x\in dom f} (y^T x - f(x))
+\]
+</p><ul>
+<li><p>\(f^*\) is always <u>convex</u> even if \(f\) is non-convex.</p>
+</li>
+</ul>
+<h3>Example: \(f(x) = - log(x)\)</h3>
+<p style="text-align:center">
+\[
+\begin{aligned}
+f^*(y) &amp;= sup_{x&gt;0} (xy + log(x)) \\
+       &amp;= \left\{
+\begin{array}{ll}
+-1-log(-y), &amp; y &lt; 0 \\
+\infty, &amp; otherwise \\
+\end{array}\right.
+\end{aligned}
+\]
+</p><h2>Composition Operation and Convexity</h2>
+<h3>Read more:</h3>
+<ul>
+<li><p>Section 3.2.4 Composition (<a href="https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf" target=&ldquo;blank&rdquo;>CVX_Textbook</a>)</p>
+</li>
+</ul>
+<h3>Summary:</h3>
+<ul>
+<li><p>We want to discover convexity of \(f = h \circ g\)</p>
+</li>
+</ul>
+<p style="text-align:center">
+\[
+f(x) = h(g(x))
+\]
+</p><ul>
+<li><p>Assume \(h\) and \(g\) are twice differentiable</p>
+</li>
+</ul>
+<p style="text-align:center">
+\[
+f&rsquo;&rsquo;(x) = h&rsquo;&rsquo;(g) g&rsquo;(x)^2 + h&rsquo;(g) g&rsquo;&rsquo;(x)
+\]
+</p><ul>
+<li><p>We only conclude about convexity of 4 cases as the following table</p>
+</li>
+</ul>
+<table id="Composition and Convexity">
+<tr class="r1"><td class="c1"><b>\(f^{\prime \prime}\)</b> </td><td class="c2"> \(h^{\prime \prime}\) </td><td class="c3"> \(h^{\prime}\)  </td><td class="c4"> \(g^{\prime \prime}\) </td></tr>
+<tr class="r2"><td class="c1">\(\geq 0\) </td><td class="c2"> \(\geq 0\) </td><td class="c3"> \(\geq 0\) </td><td class="c4"> \(\geq 0\) </td></tr>
+<tr class="r3"><td class="c1">\(\geq 0\) </td><td class="c2"> \(\geq 0\) </td><td class="c3"> \(\leq 0\) </td><td class="c4"> \(\leq 0\) </td></tr>
+<tr class="r4"><td class="c1">\(\leq 0\) </td><td class="c2"> \(\geq 0\) </td><td class="c3"> \(\geq 0\) </td><td class="c4"> \(\leq 0\) </td></tr>
+<tr class="r5"><td class="c1">\(\leq 0\) </td><td class="c2"> \(\leq 0\) </td><td class="c3"> \(\geq 0\) </td><td class="c4"> \(\geq 0\)
+</td></tr></table>
+<ul>
+<li><p>Other cases we should find other methods to prove convexity.</p>
+</li>
+</ul>
+<h2>Iterative Algorithms</h2>
+<ul>
+<li><p>Example with system of linear equations:</p>
+</li>
+</ul>
+<div class="codeblock">
+<div class="blocktitle">Jacobi Algorithm: <a href="archives/projects/convex-optimization/jacobi.m" target=&ldquo;blank&rdquo;>Matlab</a>, <a href="archives/projects/convex-optimization/jacobi.c" target=&ldquo;blank&rdquo;>C</a>, <tt>free</tt></div>
+<div class="blockcontent"><pre>
+% Main loop
+while max_iteration &gt; 0
+   x(t+1) = -1/a11 * (a12 * y(t) - b1);
+   y(t+1) = -1/a22 * (a21 * x(t) - b2);
+   if abs(x(t+1) - x(t)) &lt; tolerance
+       t = t + 1;
+       break;
+   end
+   t = t + 1;
+   max_iteration = max_iteration - 1;
+end
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Jacobi Algorithm: Result</div>
+<div class="blockcontent"><pre>
+&gt;&gt; Number of Iterations:    9
+&gt;&gt; Solution (x, y) = (0.01,0.01)
+</pre></div></div>
+<div id="footer">
+<div id="footer-text">
+Page generated 2018-09-09 07:33:49 +07, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
