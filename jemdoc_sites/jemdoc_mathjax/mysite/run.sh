@@ -4,6 +4,7 @@ xampp_path="C:/xampp/htdocs/"
 # start compiling
 echo "[1].Compiling mysite... :-)"
 ../jemdoc -c mathjax.conf -o html/ *.jemdoc
+python3 ../jemdoc -c mathjax.conf -o ../../mysite_html/ *.jemdoc
 # ../jemdoc -c googleanalytics.conf -o html/ *.jemdoc && ../jemdoc -c bibover.conf -o html/ *.jemdoc
 
 cp -r html/. ../../../../tohoanglinh.github.io/

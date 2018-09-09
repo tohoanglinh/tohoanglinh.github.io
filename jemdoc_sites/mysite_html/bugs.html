@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>NETWORKS OPTIMIZATION</title>
+<title>BUGS</title>
 <!-- MathJax -->
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -38,41 +38,38 @@ try {
 <div class="menu-item"><a href="softwares.html">Softwares</a></div>
 <div class="menu-category">Optimization</div>
 <div class="menu-item"><a href="opt_convex.html">Convex</a></div>
-<div class="menu-item"><a href="opt_network.html" class="current">Network</a></div>
+<div class="menu-item"><a href="opt_network.html">Network</a></div>
 <div class="menu-category">Others</div>
 <div class="menu-item"><a href="quotes.html">Quotes</a></div>
 <div class="menu-item"><a href="links.html">Links</a></div>
-<div class="menu-item"><a href="bugs.html">Bugs</a></div>
+<div class="menu-item"><a href="bugs.html" class="current">Bugs</a></div>
 <div class="menu-category">Visitor Stats</div>
 </td>
 <td id="layout-content">
 <div id="toptitle">
-<h1><a href="Network-Optimization" target=&ldquo;blank&rdquo;>Network-Optimization</a></h1>
+<h1>Bugs</h1>
+<div id="subtitle"></div>
 </div>
-<h2>Flow Control: Source-Link Algorithms</h2>
+<h2>[Resolved] jemdoc can not include other htmls using includeraw</h2>
+<ul>
+<li><p>What: &lsquo;TypeError: write() argument 1 must be unicode, not str.&rsquo;</p>
+</li>
+<li><p>Where: file <tt>jemdoc.py</tt> (report to <a href="mailto:www@jemnz.com" target=&ldquo;blank&rdquo;>Jacob Mattingley</a>)</p>
+</li>
+<li><p>Python: <tt>2.7.13</tt></p>
+</li>
+<li><p>Solution:</p>
+</li>
+</ul>
 <div class="codeblock">
-<div class="blocktitle">Flow Control: <a href="archives/projects/convex-optimization/flowcontrol.m" target=&ldquo;blank&rdquo;>full-code</a>, <tt>free</tt></div>
 <div class="blockcontent"><pre>
-% Main loop
-for i=1:end_sim
-    p = p + stepsize * (A*x - c); % Link Price Algorithm
-    p = max(p,0);
-
-    x = 1./(A'*p); % Source Algorithm
-
-    x_hist(i,:) = x'; % Update row i (x1, x2, x3) by transpose x value from algorithm.
-    p_hist(i,:) = p';
-end
+nf = io.open(l[len(ir):-2], 'rb') --&gt; nf = io.open(l[len(ir):-2], 'r')
+index.jemdoc #includeraw{html/test.html}
+other.jemdoc #includeraw{html/test.html
 </pre></div></div>
-<table class="imgtable"><tr><td>
-<a href="archives/projects/convex-optimization/flowcontrol_sourcerate.png"><img src="archives/projects/convex-optimization/flowcontrol_sourcerate.png" alt="Source Rate" width="300px" height="220px" /></a>&nbsp;</td>
-<td align="left"></td></tr></table>
-<table class="imgtable"><tr><td>
-<a href="archives/projects/convex-optimization/flowcontrol_linkprice.png"><img src="archives/projects/convex-optimization/flowcontrol_linkprice.png" alt="Link Price" width="300px" height="220px" /></a>&nbsp;</td>
-<td align="left"></td></tr></table>
 <div id="footer">
 <div id="footer-text">
-Page generated 2018-09-09 07:33:49 +07, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2018-09-09 14:07:54 +07, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </td>
